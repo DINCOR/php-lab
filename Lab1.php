@@ -15,20 +15,14 @@
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    //длина маятника из формы
     $length = floatval($_POST['length']);
-
-    //свободное падения
     $g = 9.81;
-
-    //период колебания
     $T = 2 * pi() * sqrt($length / $g);
 
-    //результат
     echo "<h2>Результат:</h2>";
     echo "Для длины маятника $length м, период колебания T = " . round($T, 2) . " секунд.";
 }
 ?>
-<br> <a href="index.php"> Назад </a>
+<br> <a href="index.php">Назад</a>
 </body>
 </html>

@@ -22,22 +22,17 @@
 function Minimum($x, $y) {
     return ($x < $y) ? $x : $y;
 }
-
 //отправление данных формы
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //значения a и b из формы
     $a = (float)$_POST['a'];
     $b = (float)$_POST['b'];
-
     //вычисление min(2a, b + a)
     $firstMin = Min(2 * $a, $b + $a);
-
     //вычисление min(2a - b, b)
     $secondMin = Min(2 * $a - $b, $b);
-
     //сумма
     $result = $firstMin + $secondMin;
-
     //результат
     echo "<h2>Результат вычисления:</h2>";
     echo "min(2 * $a, $b + $a) = $firstMin<br>";
@@ -45,6 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Общее значение: $result";
 }
 ?>
-<br><a href="index.php"> Назад </a>
+<br><a href="index.php">Назад</a>
 </body>
 </html>

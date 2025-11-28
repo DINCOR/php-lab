@@ -9,13 +9,12 @@
 <h1>Определение количества четных и нечетных чисел</h1>
 
 <?php
-//массив 20 случайных чисел от 1 до 100
+
 $array = [];
 for ($i = 0; $i < 20; $i++) {
     $array[] = rand(1, 100);
 }
 
-//количество четных и нечетных чисел
 $evenCount = 0;
 $oddCount = 0;
 
@@ -27,7 +26,6 @@ foreach ($array as $number) {
     }
 }
 
-//результаты
 echo "<h2>Сгенерированный массив:</h2>";
 echo "<pre>" . print_r($array, true) . "</pre>";
 
@@ -35,7 +33,6 @@ echo "<h2>Результаты:</h2>";
 echo "Количество четных чисел: $evenCount<br>";
 echo "Количество нечетных чисел: $oddCount<br>";
 
-//каких чисел больше
 if ($evenCount > $oddCount) {
     echo "Больше четных чисел.";
 } elseif ($oddCount > $evenCount) {
