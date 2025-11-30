@@ -5,15 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab29e392-aca5-4df7-82a9-22a8310e0483" name="Changes" comment="lab1,lab2,lab3,lab4">
-      <change afterPath="$PROJECT_DIR$/Lab5.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab6.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/database.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/text.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab5.1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab5.2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab1.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab2.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab3.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lab3.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab4.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lab4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab5.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lab5.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab6.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lab6.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +69,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CodeWithMe&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -96,6 +97,8 @@
       <workItem from="1761934810629" duration="1081000" />
       <workItem from="1763907376898" duration="1345000" />
       <workItem from="1764341969244" duration="3200000" />
+      <workItem from="1764519388494" duration="5810000" />
+      <workItem from="1764534998216" duration="5453000" />
     </task>
     <task id="LOCAL-00001" summary="lab1,lab2,lab3,lab4">
       <option name="closed" value="true" />
@@ -130,5 +133,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lab1,lab2,lab3,lab4" />
     <option name="LAST_COMMIT_MESSAGE" value="lab1,lab2,lab3,lab4" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

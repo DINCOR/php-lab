@@ -1,14 +1,15 @@
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') { //проверяю что форма отправлена
 
-    $organization = $_POST['organization'];
-    $stations = (int)$_POST['stations'];
-    $distance = (float)$_POST['distance'];
-    $speed = (float)$_POST['speed'];
+    $organization = $_POST['organization']; //беру название организации
+    $stations = (int)$_POST['stations']; //беру сколько станций и делаю это числом
+    $distance = (float)$_POST['distance']; //тут беру растояние между станциями
+    $speed = (float)$_POST['speed']; //тут беру скорость передачи данных
 
-    $Q = $stations * $distance;     // Класс 1 уровня
-    $Qp = $Q * $speed;              // Класс 2 уровня
+    $Q = $stations * $distance; //считаю q = станции * расстояние
+    $Qp = $Q * $speed; //считаю qp = q * скорость (второй уровень)
+
     ?>
 
     <!DOCTYPE html>
@@ -27,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <hr>
 
-    <p><b>Q (1 уровень):</b> <?= $Q ?></p>
+    <p><b>Q (1 уровень):</b> <?= $Q ?></p> <
     <p><b>Qp (2 уровень):</b> <?= $Qp ?></p>
 
     <br>
@@ -36,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </html>
 
     <?php
-    exit;
+    exit; //останавливаю код после показа результата
 }
 ?>
 
@@ -69,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <button type="submit">Рассчитать</button>
 </form>
+
 <br><a href="index.php">Назад</a>
 </body>
 </html>
-

@@ -1,47 +1,57 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Четные и Нечетные Числа</title>
+
 </head>
 <body>
+
 <h1>Определение количества четных и нечетных чисел</h1>
 
 <?php
 
-$array = [];
-for ($i = 0; $i < 20; $i++) {
-    $array[] = rand(1, 100);
+$array = [];                            //создаю пустой массив
+
+for ($i = 0; $i < 20; $i++) {           //запускаю цикл на 20 повторов
+    $array[] = rand(1, 100);            //добавляю в массив случайное число от 1 до 100
 }
 
-$evenCount = 0;
-$oddCount = 0;
+$evenCount = 0;                         //счётчик чётных чисел
+$oddCount = 0;                          //счётчик нечётных чисел
 
-foreach ($array as $number) {
-    if ($number % 2 == 0) {
-        $evenCount++;
-    } else {
-        $oddCount++;
+foreach ($array as $number) {           //перебираю каждый элемент массива
+
+    if ($number % 2 == 0) {             //проверяю, делится ли число на 2 без остатка
+        $evenCount++;                   //если да, увеличиваю счётчик чётных
+    } else {                            //если остаток есть
+        $oddCount++;                    //увеличиваю счётчик нечётных
     }
 }
 
-echo "<h2>Сгенерированный массив:</h2>";
-echo "<pre>" . print_r($array, true) . "</pre>";
+echo "<h2>Сгенерированный массив:</h2>";                //заголовок перед выводом массива
+echo "<pre>" . print_r($array, true) . "</pre>";        //вывожу массив в удобном формате
 
-echo "<h2>Результаты:</h2>";
-echo "Количество четных чисел: $evenCount<br>";
-echo "Количество нечетных чисел: $oddCount<br>";
+echo "<h2>Результаты:</h2>";                           //заголовок результата
+echo "Количество четных чисел: $evenCount<br>";        //вывод количества чётных
+echo "Количество нечетных чисел: $oddCount<br>";       //вывод количества нечётных
 
-if ($evenCount > $oddCount) {
-    echo "Больше четных чисел.";
-} elseif ($oddCount > $evenCount) {
-    echo "Больше нечетных чисел.";
-} else {
-    echo "Количество четных и нечетных чисел одинаково.";
+if ($evenCount > $oddCount) {                          //если чётных больше
+    echo "Больше четных чисел.";                       //пишу вывод
+} elseif ($oddCount > $evenCount) {                    //если нечётных больше
+    echo "Больше нечетных чисел.";                     //пишу вывод
+} else {                                               //если поровну
+    echo "Количество четных и нечетных чисел одинаково."; //сообщаю об этом
 }
+
 ?>
-<br> <a href="index.php"> Назад </a>
+
+
+<br>
+
+<a href="index.php"> Назад </a>
+
 </body>
 </html>
-
