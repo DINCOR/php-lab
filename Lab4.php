@@ -54,3 +54,36 @@ if (isset($_SESSION['auth'])) {                //если кто-то уже а�
     $_SESSION['visit_count']++;                //увеличиваем количество посещений
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+</head>
+<body>
+<h1>Добро пожаловать!</h1>
+
+<?php if (isset($_SESSION['auth'])): ?>
+    <p>Вы авторизованы. Количество посещений: <?php echo $_SESSION['visit_count']; ?></p>
+    <form method="post">
+        <button type="submit" name="logout">Выйти</button>
+    </form>
+<?php else: ?>
+    <form method="post">
+        <label for="login">Логин:</label>
+        <input type="text" id="login" name="login" required>
+        <br>
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Войти</button>
+    </form>
+    <?php if (isset($error)): ?>
+        <p style="color: red;"><?php echo $error; ?></p>
+    <?php endif; ?>
+<?php endif; ?>
+
+</body>
+</html>
