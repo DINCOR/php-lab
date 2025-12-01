@@ -34,7 +34,7 @@ class ExtendedNumberPair extends NumberPair {
 
     //строка для трёх чисел
     public function info(): string {
-        return "A = {$this->a}, B = {$this->b}, C = {$this->c}"; //делаем строку для 3х
+        return "A = {$this->a}, B = {$this->b}, C = {$this->c}"; //делаем строку для 3
     }
 
     //тут считаем полуразность * c
