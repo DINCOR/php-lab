@@ -1,5 +1,5 @@
 <?php
-function snakeToCamel($string) {            //функция для преобразования snake_case в camelCase
+function snakeToCamel($string) {            
     //Разделяем строку по символу подчеркивания
     $parts = explode('_', $string);         //разбив строки на массив элементов по нижнему подчерк
 
