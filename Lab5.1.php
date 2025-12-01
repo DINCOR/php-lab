@@ -1,6 +1,5 @@
 <?php
 
-//класс который хранит два числа
 class NumberPair {
     //тут будут лежать a и b
     private float $a;
@@ -19,7 +18,7 @@ class NumberPair {
 
     //считает полу-разность чисел
     public function halfDifference(): float {
-        return ($this->a - $this->b) / 2; //формула (ничего сложного)
+        return ($this->a - $this->b) / 2; //формула 
     }
 }
 
@@ -35,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $obj = new NumberPair($a, $b); //создаём объект с числами
 
     $info = $obj->info();             //получаем текст про объект
-    $result = $obj->halfDifference(); //считаем полуразность (почти разность)
+    $result = $obj->halfDifference(); //считаем полуразность 
 }
 
 ?>
@@ -58,7 +57,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <button type="submit">Вычислить</button>
 </form>
 
-<!--если есть что показать—показываем-->
 <?php if ($info): ?>
     <p><b>Объект:</b> <?= $info ?></p>
     <p><b>Полу-разность:</b> <?= $result ?></p>
