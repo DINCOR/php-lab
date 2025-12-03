@@ -2,24 +2,24 @@
 
 $filename = "text.txt"; 
 
-$defaultPerPage = 300;  //сколько символов на страничку по умолчанию
+$defaultPerPage = 300;  
 
-$page = isset($_GET['page']) ? (int)$_GET['page'] : 1; //смотрит передали ли номер страницы если нет то делает 1
-$perPage = isset($_GET['perPage']) ? (int)$_GET['perPage'] : $defaultPerPage; //берет сколько символов показывать если не дали то берет стандарт
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1; 
+$perPage = isset($_GET['perPage']) ? (int)$_GET['perPage'] : $defaultPerPage; 
 
-if ($page < 1) $page = 1; //если кто-то ввёл страницу меньше 1 то оно исправляет чтобы не сломалось
+if ($page < 1) $page = 1; 
 
-if (!file_exists($filename)) { //проверяет есть ли вообще файл 
-    die("Файл не найден!"); //уведомляет о том что файл не найден
+if (!file_exists($filename)) { 
+    die("Файл не найден!"); 
 }
 
-$text = file_get_contents($filename); //загружает весь текст файла внутрь переменной
-$totalChars = strlen($text); //считает сколько там символов всего 
+$text = file_get_contents($filename); 
+$totalChars = strlen($text); 
 
-$totalPages = ceil($totalChars / $perPage); //узнает сколько страниц будет исходя из длины
-$start = ($page - 1) * $perPage; //начало текста которое надо показывать на этой странице
+$totalPages = ceil($totalChars / $perPage); 
+$start = ($page - 1) * $perPage; 
 
-$pageText = mb_substr($text, $start, $perPage, 'UTF-8'); //отрезает кусочек текста для текущей страницы чтобы не показывать всё сразу
+$pageText = mb_substr($text, $start, $perPage, 'UTF-8'); 
 ?>
 
 <!DOCTYPE html>
