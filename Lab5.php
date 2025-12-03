@@ -1,14 +1,13 @@
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') { //проверяет что форма отправлена
+if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
+    $organization = $_POST['organization']; 
+    $stations = (int)$_POST['stations']; 
+    $distance = (float)$_POST['distance']; 
+    $speed = (float)$_POST['speed']; 
 
-    $organization = $_POST['organization']; //берет название организации
-    $stations = (int)$_POST['stations']; //берет сколько станций и делает это числом
-    $distance = (float)$_POST['distance']; //берет растояние между станциями
-    $speed = (float)$_POST['speed']; //берет скорость передачи данных
-
-    $Q = $stations * $distance; //считает q = станции * расстояние
-    $Qp = $Q * $speed; //считает qp = q * скорость (второй уровень)
+    $Q = $stations * $distance; 
+    $Qp = $Q * $speed; 
 
     ?>
 
