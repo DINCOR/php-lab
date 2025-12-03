@@ -1,40 +1,37 @@
 <?php
 
 class NumberPair {
-    //тут будут лежать a и b
     private float $a;
     private float $b;
 
-    //когда создаём объект — записываем в него числа
     public function __construct(float $a, float $b) {
-        $this->a = $a; //запоминаем a
-        $this->b = $b; //запоминаем b
+        $this->a = $a; 
+        $this->b = $b; 
     }
 
-    //возвращает текст с числами
     public function info(): string {
-        return "Число A = {$this->a}, Число B = {$this->b}"; //делаем строку
+        return "Число A = {$this->a}, Число B = {$this->b}"; 
     }
 
-    //считает полу-разность чисел
+ 
     public function halfDifference(): float {
-        return ($this->a - $this->b) / 2; //формула 
+        return ($this->a - $this->b) / 2;  
     }
 }
 
-//переменные для вывода на экран
-$info = "";   //сюда положим текст
-$result = ""; //сюда результат
 
-//если форма была отправлена
+$info = "";   
+$result = ""; 
+
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $a = floatval($_POST["a"]); //берём a из формы
-    $b = floatval($_POST["b"]); //берём b из формы
+    $a = floatval($_POST["a"]); 
+    $b = floatval($_POST["b"]); 
 
-    $obj = new NumberPair($a, $b); //создаём объект с числами
+    $obj = new NumberPair($a, $b); 
 
-    $info = $obj->info();             //получаем текст про объект
-    $result = $obj->halfDifference(); //считаем полуразность 
+    $info = $obj->info();             
+    $result = $obj->halfDifference();  
 }
 
 ?>
