@@ -1,57 +1,54 @@
 <?php
 function snakeToCamel($string) {            
-    //Разделяем строку по символу подчеркивания
-    $parts = explode('_', $string);         //разбив строки на массив элементов по нижнему подчерк
 
-    //приводим каждую часть к нижнему регистру и убираем подчерк
-    //первую часть оставляем в нижнем регистре остальные с заглавной буквы
-    $camelCaseString = strtolower(array_shift($parts));  //берем первую часть и приводим к нижнему регистру
+    $parts = explode('_', $string);        
+    $camelCaseString = strtolower(array_shift($parts));  
 
-    foreach ($parts as $part) {             //перебираем другие части строки
-        $camelCaseString .= ucfirst(strtolower($part)); //делаем первую букву заглавной и добавляем к строке
+    foreach ($parts as $part) {            
+        $camelCaseString .= ucfirst(strtolower($part)); 
     }
 
-    return $camelCaseString;                //возвращаем готовую строку в camelCase
+    return $camelCaseString;               
 }
 
 
-$inputString = 'this_is_string';            //исходная строка в snake_case
-$outputString = snakeToCamel($inputString); //преобраз её функцией
-echo "Преобразованная строка: " . $outputString; //ыывод
+$inputString = 'this_is_string';          
+$outputString = snakeToCamel($inputString); 
+echo "Преобразованная строка: " . $outputString; 
 
 
 
-session_start();                            //запуск сесии для хранения данных между запросами
+session_start();                           
 
-//счетчикик посещений
-if (!isset($_SESSION['visit_count'])) {     //если счётчик ещё не создан
-    $_SESSION['visit_count'] = 0;           //инициализируем его нулём
+
+if (!isset($_SESSION['visit_count'])) {     
+    $_SESSION['visit_count'] = 0;          
 }
 
-//обработка авторизации
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {    //проверка была ли отправлена форма пост
 
-    if (isset($_POST['login']) && isset($_POST['password'])) { //если отправлены логин и пароль
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {    
 
-        //проверка корректности данных
+    if (isset($_POST['login']) && isset($_POST['password'])) { 
+
+       
         if ($_POST['login'] === 'admin' && $_POST['password'] === '1234') {
-            $_SESSION['auth'] = true;         //устанавливаем флаг авторизации
-            header('Location: ' . $_SERVER['PHP_SELF']); //перезагрузка страницы
-            exit();                            //завершение выполнения
+            $_SESSION['auth'] = true;        
+            header('Location: ' . $_SERVER['PHP_SELF']); 
+            exit();                           
         } else {
-            $error = 'Неверные данные!';       //сообщение об ошибке
+            $error = 'Неверные данные!';      
         }
 
-    } elseif (isset($_POST['logout'])) {       //если нажата кнопка выход
-        unset($_SESSION['auth']);              //удаление статусы авторизации
-        header('Location: ' . $_SERVER['PHP_SELF']); //перезагрузки страницы
-        exit();                                //останавлиеик выполнения
+    } elseif (isset($_POST['logout'])) {       
+        unset($_SESSION['auth']);              
+        header('Location: ' . $_SERVER['PHP_SELF']); 
+        exit();                               
     }
 }
 
-//увеличение счетчика посещений
-if (isset($_SESSION['auth'])) {                //если кто-то уже авторизован
-    $_SESSION['visit_count']++;                //увеличиваем количество посещений
+
+if (isset($_SESSION['auth'])) {               
+    $_SESSION['visit_count']++;                
 }
 ?>
 
